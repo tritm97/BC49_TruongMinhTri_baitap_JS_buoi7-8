@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Bài tập JS buổi 7 - 8</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <!-- FontAwesome 6.2.0 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- index.css  -->
+    <link rel="stylesheet" href="./css/index.css">
+
+</head>
+
+<body>
+
+    <header>
+        <div class="container text-center bg-success bg-opacity-75 text-white">
+            <h1>bài tập js buổi 7 - 8</h1>
+        </div>
+    </header>
+  
+    <section class="baiLam">
+        <div class="container">
+            <input type="number" class="form-control" name="" id="soNguyen" aria-describedby="helpId" placeholder=" Nhập số nguyên n">
+            <button class="btn btn-primary bg-success mt-2 nutNhan px-5" id="nhapSo">Nhập số</button>
+            <div id="hienThiArray" class="bg-success bg-opacity-75 text-white p-3 mt-2 hienThi"></div>
+
+            <ul class="m-d expand-list">
+                <li data-md-content="200">
+                    <label name="tab" for="tab1" tabindex="-1" class="tab_lab" role="tab">Tổng số dương</label>
+                    <input type="checkbox" class="tab" id="tab1" tabindex="0" />
+                    <span class="open-close-icon">
+                        <i class="fas fa-plus"></i>
+                        <i class="fas fa-minus"></i>
+                    </span>
+                    <div class="content">
+                        <button class="btn btn-primary bg-success nutNhan px-5" id="tinhTong">Tính tổng</button>
+                        <div id="hienThiTongSoDuong" class="bg-success bg-opacity-75 text-white p-3 mt-2 hienThi"></div>
+                    </div>
+                </li>
+
+
+                <li data-md-content="200">
+                    <label name="tab" for="tab2" tabindex="-1" class="tab_lab" role="tab">Đếm số dương</label>
+                    <input type="checkbox" class="tab" id="tab2" tabindex="0" />
+                    <span class="open-close-icon"><i class="fas fa-plus"></i><i class="fas fa-minus"></i></span>
+                    <div class="content">
+                        <button class="btn btn-primary bg-success nutNhan px-5" id="demSo">Đếm số</button>
+                        <div id="hienThiDemSoDuong" class="bg-success bg-opacity-75 text-white p-3 mt-2 hienThi"></div>
+                    </div>
+                </li>
+
+
+                <li data-md-content="200">
+                    <label name="tab" for="tab3" tabindex="-1" class="tab_lab" role="tab">Tìm số nhỏ nhất</label>
+                    <input type="checkbox" class="tab" id="tab3" tabindex="0" />
+                    <span class="open-close-icon"><i class="fas fa-plus"></i><i class="fas fa-minus"></i></span>
+                    <div class="content">
+                        <button class="btn btn-primary bg-success nutNhan px-5" id="timSoNhoNhat">Tìm số nhỏ nhất</button>
+                        <div id="hienThiSoNhoNhat" class="bg-success bg-opacity-75 text-white p-3 mt-2 hienThi"></div>
+                    </div>
+                </li>
+
+
+                <li data-md-content="200">
+                    <label name="tab" for="tab4" tabindex="-1" class="tab_lab" role="tab">Tìm số dương nhỏ nhất</label>
+                    <input type="checkbox" class="tab" id="tab4" tabindex="0" />
+                    <span class="open-close-icon"><i class="fas fa-plus"></i><i class="fas fa-minus"></i></span>
+                    <div class="content">
+                        <button class="btn btn-primary bg-success nutNhan px-5" id="timSoDuongNhoNhat">Tìm số dương nhỏ nhất</button>
+                        <div id="hienThiSoDuongNhoNhat" class="bg-success bg-opacity-75 text-white p-3 mt-2 hienThi"></div>
+                    </div>
+                </li>
+
+
+                <li data-md-content="200">
+                    <label name="tab" for="tab5" tabindex="-1" class="tab_lab" role="tab">Tìm số chẵn cuối cùng</label>
+                    <input type="checkbox" class="tab" id="tab5" tabindex="0" />
+                    <span class="open-close-icon"><i class="fas fa-plus"></i><i class="fas fa-minus"></i></span>
+                    <div class="content">
+                        <button class="btn btn-primary bg-success nutNhan px-5" id="timSoChanCuoiCung">Tìm số chẵn cuối cùng</button>
+                        <div id="hienThiSoChanCuoiCung" class="bg-success bg-opacity-75 text-white p-3 mt-2 hienThi"></div>
+                    </div>
+                </li>
+
+
+                <li data-md-content="200">
+                    <label name="tab" for="tab6" tabindex="-1" class="tab_lab" role="tab">Đổi chỗ</label>
+                    <input type="checkbox" class="tab" id="tab6" tabindex="0" />
+                    <span class="open-close-icon"><i class="fas fa-plus"></i><i class="fas fa-minus"></i></span>
+                    <div class="content">
+                        <input type="number" min="0" class="form-control mb-2" name="" id="soViTri1" aria-describedby="helpId" placeholder=" Nhập số vị trí 1">
+                        <input type="number" min="0" class="form-control mb-2" name="" id="soViTri2" aria-describedby="helpId" placeholder=" Nhập số vị trí 2">
+                        <button class="btn btn-primary bg-success nutNhan px-5" id="doiCho">Đổi chỗ</button>
+                        <div id="hienThiDoiCho" class="bg-success bg-opacity-75 text-white p-3 mt-2 hienThi"></div>
+                    </div>
+                </li>
+
+
+                <li data-md-content="200">
+                    <label name="tab" for="tab7" tabindex="-1" class="tab_lab" role="tab">Sắp xếp tăng dần</label>
+                    <input type="checkbox" class="tab" id="tab7" tabindex="0" />
+                    <span class="open-close-icon"><i class="fas fa-plus"></i><i class="fas fa-minus"></i></span>
+                    <div class="content">
+                        <button class="btn btn-primary bg-success nutNhan px-5" id="sapXepTangDan">Sắp xếp tăng dần</button>
+                        <div id="hienThiSapXepTangDan" class="bg-success bg-opacity-75 text-white p-3 mt-2 hienThi"></div>
+                    </div>
+                </li>
+
+
+                <li data-md-content="200">
+                    <label name="tab" for="tab8" tabindex="-1" class="tab_lab" role="tab">Tìm số nguyên tố đầu tiên</label>
+                    <input type="checkbox" class="tab" id="tab8" tabindex="0" />
+                    <span class="open-close-icon"><i class="fas fa-plus"></i><i class="fas fa-minus"></i></span>
+                    <div class="content">
+                        <button class="btn btn-primary bg-success nutNhan px-5" id="soNguyenToDauTien">Tìm số nguyên tố đầu tiên</button>
+                        <div id="hienThiSoNguyenToDauTien" class="bg-success bg-opacity-75 text-white p-3 mt-2 hienThi"></div>
+                    </div>
+                </li>
+
+
+                <li data-md-content="200">
+                    <label name="tab" for="tab9" tabindex="-1" class="tab_lab" role="tab">Đếm số nguyên</label>
+                    <input type="checkbox" class="tab" id="tab9" tabindex="0" />
+                    <span class="open-close-icon"><i class="fas fa-plus"></i><i class="fas fa-minus"></i></span>
+                    <div class="content">
+                        <button class="btn btn-primary bg-success nutNhan px-5" id="demSoNguyen">Đếm số nguyên</button>
+                        <div id="hienThiDemSoNguyen" class="bg-success bg-opacity-75 text-white p-3 mt-2 hienThi"></div>
+                    </div>
+                </li>
+
+
+                <li data-md-content="200">
+                    <label name="tab" for="tab10" tabindex="-1" class="tab_lab" role="tab">So sánh số lượng số âm và dương</label>
+                    <input type="checkbox" class="tab" id="tab10" tabindex="0" />
+                    <span class="open-close-icon"><i class="fas fa-plus"></i><i class="fas fa-minus"></i></span>
+                    <div class="content">
+                        <button class="btn btn-primary bg-success nutNhan px-5" id="soSanh">So sánh</button>
+                        <div id="hienThiSoSanh" class="bg-success bg-opacity-75 text-white p-3 mt-2 hienThi"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+
+  <!-- index.js  -->
+  <script src="./js/index.js"></script>
+</body>
+
+</html>
