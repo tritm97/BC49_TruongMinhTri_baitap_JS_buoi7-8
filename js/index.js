@@ -89,3 +89,28 @@ document.getElementById('timSoChanCuoiCung').onclick = function () {
     }
 };
 
+// Đổi chỗ 2 giá trị trong mảng theo vị trí
+document.getElementById('doiCho').onclick = function () {
+    var soViTri1 = document.getElementById('soViTri1').value *1;
+    var soViTri2 = document.getElementById('soViTri2').value *1;
+    var luuTam = 0;
+    if (soViTri1 == soViTri2) {
+        alert('Không thể đổi chỗ do 2 vị trí trùng nhau');
+        document.getElementById('hienThiDoiCho').innerHTML = `Không thể đổi chỗ`;
+    } else {
+        if (soViTri1 < 0 || soViTri2 < 0) {
+            alert('Số vị trí không hợp lệ (nhỏ hơn 0)');
+            document.getElementById('hienThiDoiCho').innerHTML = `Số vị trí không hợp lệ (nhỏ hơn 0)`;
+        } else {
+            if (soViTri1 > (arrNumber.length - 1) || soViTri2 > (arrNumber.length - 1)) {
+                alert('Số vị trí không hợp lệ (quá giới hạn)');
+                document.getElementById('hienThiDoiCho').innerHTML = `Số vị trí không hợp lệ (quá giới hạn)`;
+            } else {
+                luuTam = arrNumber[soViTri1];
+                arrNumber[soViTri1] = arrNumber[soViTri2];
+                arrNumber[soViTri2] = luuTam;
+                document.getElementById('hienThiDoiCho').innerHTML = `Mảng sau khi đổi: ${arrNumber}`;
+            }
+        }
+    }
+};
