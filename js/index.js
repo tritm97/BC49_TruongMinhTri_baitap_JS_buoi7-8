@@ -114,3 +114,51 @@ document.getElementById('doiCho').onclick = function () {
         }
     }
 };
+
+// Sắp xếp tăng dần
+document.getElementById('sapXepTangDan').onclick = function () {
+    var tangDan = arrNumber.sort(function (a, b) {return a - b});
+    document.getElementById('hienThiSapXepTangDan').innerHTML = `Mảng sau khi sắp xếp: ${tangDan}`;
+};
+
+// Tìm số nguyên tố đầu tiên
+document.getElementById('soNguyenToDauTien').onclick = function () {
+    // hàm kiểm tra số nguyên tố
+    function isprime(n){
+        //flag = 0 => không phải số nguyên tố
+        //flag = 1 => số nguyên tố
+        
+        var flag = 1;
+
+        if (n < 2) {
+            return flag = 0;
+        };
+        
+        var i = 2;
+        while(i < n) {
+            if(n % i == 0) {
+                flag = 0;
+                break;
+            };
+            i++;
+        };
+
+        return flag;
+    };
+
+    var result = [];
+
+    /*Tìm  các số nguyên tố trong mảng arrNumber */
+    for (var i = 0; i < arrNumber.length; i++){
+        if (isprime(arrNumber[i]) == 1) {
+            result.push(arrNumber[i]);
+        }
+    };
+
+    // console.log(result[0]);
+    if (result.length == 0) {
+        document.getElementById('hienThiSoNguyenToDauTien').innerHTML = `Không có số nguyên tố`;
+    } else {
+        document.getElementById('hienThiSoNguyenToDauTien').innerHTML = `Số nguyên tố đầu tiên trong mảng là: ${result[0]}`;
+    };
+};
