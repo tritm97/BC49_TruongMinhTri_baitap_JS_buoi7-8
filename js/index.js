@@ -124,41 +124,95 @@ document.getElementById('sapXepTangDan').onclick = function () {
 // Tìm số nguyên tố đầu tiên
 document.getElementById('soNguyenToDauTien').onclick = function () {
     // hàm kiểm tra số nguyên tố
-    function isprime(n){
-        //flag = 0 => không phải số nguyên tố
-        //flag = 1 => số nguyên tố
+    function kiemTraSoNguyenTo(n){
+        //traVe = 0 => không phải số nguyên tố
+        //traVe = 1 => số nguyên tố
         
-        var flag = 1;
+        var traVe = 1;
 
         if (n < 2) {
-            return flag = 0;
+            return traVe = 0;
         };
         
         var i = 2;
         while(i < n) {
             if(n % i == 0) {
-                flag = 0;
+                traVe = 0;
                 break;
             };
             i++;
         };
 
-        return flag;
+        return traVe;
     };
 
-    var result = [];
+    var arrSoNguyenTo = [];
 
-    /*Tìm  các số nguyên tố trong mảng arrNumber */
+    // Tìm  các số nguyên tố trong mảng arrNumber
     for (var i = 0; i < arrNumber.length; i++){
-        if (isprime(arrNumber[i]) == 1) {
-            result.push(arrNumber[i]);
+        if (kiemTraSoNguyenTo(arrNumber[i]) == 1) {
+            arrSoNguyenTo.push(arrNumber[i]);
         }
     };
 
-    // console.log(result[0]);
-    if (result.length == 0) {
-        document.getElementById('hienThiSoNguyenToDauTien').innerHTML = `Không có số nguyên tố`;
+    // console.log(arrSoNguyenTo[0]);
+    if (arrSoNguyenTo.length == 0) {
+        alert('Không có số nguyên tố');
+        document.getElementById('hienThiSoNguyenToDauTien').innerHTML = `Số nguyên tố đầu tiên trong mảng là: -1`;
     } else {
-        document.getElementById('hienThiSoNguyenToDauTien').innerHTML = `Số nguyên tố đầu tiên trong mảng là: ${result[0]}`;
+        document.getElementById('hienThiSoNguyenToDauTien').innerHTML = `Số nguyên tố đầu tiên trong mảng là: ${arrSoNguyenTo[0]}`;
     };
 };
+
+// Đếm số nguyên
+var arrSoNguyenThem = [];
+document.getElementById('nhapSoThem').onclick = function () {
+    var soNguyenThem = document.getElementById('soNguyenThem').value *1;
+    arrSoNguyenThem.push(soNguyenThem);
+    document.getElementById('hienThiArrayThem').innerHTML = arrSoNguyenThem;
+}
+document.getElementById('demSoNguyen').onclick = function () {
+    var soLuong = 0;
+    // console.log(typeof arrSoNguyenThem[0]);
+    for (var i=0; i<arrSoNguyenThem.length; i++) {
+        if (Number.isInteger(arrSoNguyenThem[i])) {
+            soLuong++;
+        } else {
+            soLuong+=0;
+        }
+    }
+    if (soLuong == 0) {
+        alert('Không có số nguyên');
+        document.getElementById('hienThiDemSoNguyen').innerHTML = `Số lượng số nguyên trong mảng: 0`;
+    } else {
+        document.getElementById('hienThiDemSoNguyen').innerHTML = `Số lượng số nguyên trong mảng: ${soLuong}`;
+    }
+};
+
+// So sánh số lượng số âm và dương
+document.getElementById('soSanh').onclick = function () {
+    if (arrNumber.length == 0) {
+        alert('Vui lòng nhập số nguyên n');
+        document.getElementById('hienThiSoSanh').innerHTML = `Vui lòng nhập số nguyên n trước`;
+    } else {
+        var slSoAm = 0;
+        var slSoDuong = 0;
+        for (var i=0; i<arrNumber.length; i++) {
+            if (arrNumber[i] == 0) {
+                slSoAm += 0;
+                slSoDuong += 0;
+            } else if (arrNumber[i] < 0) {
+                slSoAm += 1;
+            } else {
+                slSoDuong += 1;
+            }
+        }
+        if (slSoAm == slSoDuong) {
+            document.getElementById('hienThiSoSanh').innerHTML = `Số lượng số âm = số lượng số dương`;
+        } else if (slSoAm < slSoDuong) {
+            document.getElementById('hienThiSoSanh').innerHTML = `Số lượng số âm < số lượng số dương`;
+        } else {
+            document.getElementById('hienThiSoSanh').innerHTML = `Số lượng số âm > số lượng số dương`;
+        }
+    }
+}

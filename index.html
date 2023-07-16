@@ -31,7 +31,7 @@
   
     <section class="baiLam">
         <div class="container">
-            <input type="number" class="form-control" name="" id="soNguyen" aria-describedby="helpId" placeholder=" Nhập số nguyên n">
+            <input type="number" class="form-control" name="" id="soNguyen" aria-describedby="helpId" placeholder="Nhập số nguyên n">
             <button class="btn btn-primary bg-success mt-2 nutNhan px-5" id="nhapSo">Nhập số</button>
             <div id="hienThiArray" class="bg-success bg-opacity-75 text-white p-3 mt-2 hienThi"></div>
 
@@ -129,12 +129,15 @@
                 </li>
 
 
-                <li data-md-content="200">
+                <li data-md-content="300">
                     <label name="tab" for="tab9" tabindex="-1" class="tab_lab" role="tab">Đếm số nguyên</label>
                     <input type="checkbox" class="tab" id="tab9" tabindex="0" />
                     <span class="open-close-icon"><i class="fas fa-plus"></i><i class="fas fa-minus"></i></span>
                     <div class="content">
-                        <button class="btn btn-primary bg-success nutNhan px-5" id="demSoNguyen">Đếm số nguyên</button>
+                        <input type="number" class="form-control" name="" id="soNguyenThem" aria-describedby="helpId" placeholder="Nhập số">
+                        <button class="btn btn-primary bg-success mt-2 nutNhan px-5" id="nhapSoThem">Thêm số</button>
+                        <div id="hienThiArrayThem" class="bg-success bg-opacity-75 text-white p-3 mt-2 hienThi"></div>
+                        <button class="btn btn-primary bg-success nutNhan px-5 mt-2" id="demSoNguyen">Đếm số nguyên</button>
                         <div id="hienThiDemSoNguyen" class="bg-success bg-opacity-75 text-white p-3 mt-2 hienThi"></div>
                     </div>
                 </li>
@@ -153,7 +156,9 @@
         </div>
     </section>
 
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <footer>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </footer>
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
